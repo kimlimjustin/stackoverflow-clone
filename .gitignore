@@ -12,14 +12,15 @@ server/node_modules
 # production
 client/build
 client/dist
+client/.eslintcache
 
 # misc
-website/.env
-website/.DS_Store
-website/.env.local
+client/.env
+client/.DS_Store
+client/.env.local
 website/.env.development.local
-website/.env.test.local
-website/.env.production.local
+client/.env.test.local
+client/.env.production.local
 
 server/.env
 server/.DS_Store

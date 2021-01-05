@@ -1,0 +1,37 @@
+body{
+    background-color: #eff0f1;
+}
+.form-label{
+    font-weight: bold;
+}
+.width-screen-signup{
+    display: block;
+}
+.small-screen-signup{
+    display: none;
+}
+.register-title{
+    font-size: 1.5rem;
+    text-align: center;
+}
+a{
+    color: #0077cc;
+    text-decoration: none;
+}
+
+.login-img{
+    width: 50px;
+}
+
+.login-form{
+    max-width: 350px;
+    margin: auto
+}
+@media only screen and (max-width: 600px){
+    .width-screen-signup{
+        display: none;
+    }
+    .small-screen-signup{
+        display: block;
+    }
+}
