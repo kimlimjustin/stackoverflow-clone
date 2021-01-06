@@ -7,9 +7,11 @@ import Home from "./Components/index.jsx";
 import Register from "./Components/register.jsx";
 import Login from "./Components/login.jsx";
 import Logout from "./Components/logout.jsx";
+import Navbar from "./Components/navbar.jsx";
 
 const App = () => (
     <Router>
+        <Route exact path = "*" component = {Navbar} />
         <Switch>
             <Route exact path = "/" component = {Home} />
             <Route path = "/register" component = {Register} />

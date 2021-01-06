@@ -52,7 +52,7 @@ const Register  = () =>{
                     <p className="register-title">Create your Stack Overflow account. It's free and only takes a minute.</p>
                 </div>
                 <div className="col-6">
-                    <form className="box box-shadow m-3 white-background" onSubmit = {RegisterUser}>
+                    <form className="box box-shadow m-3 white-background black-text" onSubmit = {RegisterUser}>
                         <div className="form-group">
                             <p className="red-text"><b>{errorMessage}</b></p>
                         </div>

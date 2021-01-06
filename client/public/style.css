@@ -3,6 +3,7 @@ body{
 }
 .form-label{
     font-weight: bold;
+    color: inherit;
 }
 .width-screen-signup{
     display: block;
@@ -27,11 +28,31 @@ a{
     max-width: 350px;
     margin: auto
 }
+
+.topnav-brand{
+    color: inherit
+}
+
+.banner{
+    width: 200px;
+}
+.intro-pg{
+    text-align: center;
+}
+.intro-title{
+    font-size: 3rem;
+}
+.intro-text{
+    font-size: 1.5rem;
+}
 @media only screen and (max-width: 600px){
     .width-screen-signup{
         display: none;
     }
     .small-screen-signup{
         display: block;
+    }
+    .intro-title{
+        font-size: 1.8rem;
     }
 }
