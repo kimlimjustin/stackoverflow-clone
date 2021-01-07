@@ -54,6 +54,16 @@ a{
     background-color: #378ad3;
     color: #fff;
 }
+.index-title{
+    font-size: 1.5rem;
+}
+.question-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+img{
+    max-width: 100%;
+}
 @media only screen and (max-width: 600px){
     .width-screen-signup{
         display: none;
@@ -63,5 +73,8 @@ a{
     }
     .intro-title{
         font-size: 1.8rem;
+    }
+    .question-title{
+        font-size: 1.2rem;
     }
 }

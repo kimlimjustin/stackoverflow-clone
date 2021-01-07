@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Cookies from 'universal-cookie';
 import getUserByToken from '../Lib/getUserByToken';
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 const Home = () => {
     const [userInfo, setUserInfo] = useState(null);
@@ -15,6 +16,11 @@ const Home = () => {
         })
     }, [firstRender])
 
+    useEffect(() =>{
+        axios.get(`${process.env.REACT_APP_SERVER_URL}/questions/get/all`)
+        .then(res => console.log(res.data))
+    })
+
     useEffect(() => console.log(userInfo), [userInfo])
 
     return(
@@ -27,7 +33,7 @@ const Home = () => {
                 <Link to = "/register" className="btn btn-light ml-2">Sign up</Link>
             </div>
             :<div>
-                <h1>Top Questions <Link className="btn ask-question-btn" to = "/create">Ask question</Link></h1>
+                <h1 className="index-title">Top Questions <Link className="btn ask-question-btn" to = "/create">Ask question</Link></h1>
             </div>}
         </div>
     )

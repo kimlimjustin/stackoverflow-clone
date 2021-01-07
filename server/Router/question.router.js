@@ -12,7 +12,7 @@ router.get('/get/all', (req, res) => {
 })
 
 router.get('/get/:id', (req, res) =>{
-    Blog.findOne({_id: req.params.id}, (err, question) => {
+    Question.findOne({_id: req.params.id}, (err, question) => {
         if(err || !question) res.status(404).json("Question not found.")
         else res.json(question)
     })

@@ -12,6 +12,7 @@ const Create = () => {
         const token = new Cookies().get('token');
         getUserByToken(token).then(result => {
             if(result) setUserInfo(result)
+            else window.location = "/login"
         })
     }, [])
 
@@ -20,7 +21,7 @@ const Create = () => {
 
         const token = new Cookies().get('token')
         Axios.post(`${process.env.REACT_APP_SERVER_URL}/questions/create`, {token, asker: userInfo.email, title, body})
-        .then(res => console.log(res))
+        .then(res => window.location = `/question/${res.data.id}`)
     }
 
     return(
