@@ -8,6 +8,7 @@ import Register from "./Components/register.jsx";
 import Login from "./Components/login.jsx";
 import Logout from "./Components/logout.jsx";
 import Navbar from "./Components/navbar.jsx";
+import Create from "./Components/create.jsx";
 
 const App = () => (
     <Router>
@@ -17,6 +18,7 @@ const App = () => (
             <Route path = "/register" component = {Register} />
             <Route path = "/login" component = {Login} />
             <Route path = "/logout" component = {Logout} />
+            <Route path = "/create" component = {Create} />
         </Switch>
     </Router>
 )

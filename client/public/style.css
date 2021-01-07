@@ -50,6 +50,10 @@ a{
     color: inherit;
     float: right;
 }
+.submit-question-btn{
+    background-color: #378ad3;
+    color: #fff;
+}
 @media only screen and (max-width: 600px){
     .width-screen-signup{
         display: none;

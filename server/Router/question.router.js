@@ -3,6 +3,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 const Question = require('../Models/question.model');
+const User = require('../Models/user.model');
 
 router.get('/get/all', (req, res) => {
     Question.find().sort({_id: -1}).limit(100)

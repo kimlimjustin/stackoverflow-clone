@@ -27,7 +27,7 @@ const Home = () => {
                 <Link to = "/register" className="btn btn-light ml-2">Sign up</Link>
             </div>
             :<div>
-                <h1>Top Questions <button className="btn ask-question-btn">Ask question</button></h1>
+                <h1>Top Questions <Link className="btn ask-question-btn" to = "/create">Ask question</Link></h1>
             </div>}
         </div>
     )
