@@ -45,6 +45,11 @@ a{
 .intro-text{
     font-size: 1.5rem;
 }
+.ask-question-btn{
+    background-color: #378ad3;
+    color: inherit;
+    float: right;
+}
 @media only screen and (max-width: 600px){
     .width-screen-signup{
         display: none;

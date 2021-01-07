@@ -26,7 +26,9 @@ const Home = () => {
                 <Link to = "/login" className="btn btn-dark mr-2">Log in</Link>
                 <Link to = "/register" className="btn btn-light ml-2">Sign up</Link>
             </div>
-        :null}
+            :<div>
+                <h1>Top Questions <button className="btn ask-question-btn">Ask question</button></h1>
+            </div>}
         </div>
     )
 }
