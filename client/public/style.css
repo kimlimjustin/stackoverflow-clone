@@ -50,7 +50,7 @@ a{
     color: inherit;
     float: right;
 }
-.submit-question-btn{
+.submit-question-btn, .submit-answer-btn{
     background-color: #378ad3;
     color: #fff;
 }

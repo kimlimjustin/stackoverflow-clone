@@ -34,13 +34,13 @@ router.post('/create', jsonParser, (req, res) => {
 })
 
 router.post('/answer', jsonParser, (req, res) => {
-    const {answer, token, answerer} = req.body;
+    const {answer, token, answerer, question} = req.body;
     //Validating answerer
     User.findOne({email: answerer, token}, (err, user) => {
         if(err) res.status(500).json("Something went wrong.")
         else if(!user) res.status(403).json("Permission denied. ")
         else{
-            Question.findOne({_id: answer}, (err, question) => {
+            Question.findOne({_id: question}, (err, question) => {
                 if(err || !question) res.status(500).json("Something went wrong.")
                 else{
                     question.answers.push({answerer: user, answer})

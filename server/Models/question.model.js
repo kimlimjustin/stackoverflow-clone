@@ -16,7 +16,7 @@ const QuestionSchema = new Schema({
         required: true
     },
     answers: {
-        type: Object,
+        type: Array,
         required: false
     }
 }, {
