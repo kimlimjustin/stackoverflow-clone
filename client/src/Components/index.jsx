@@ -3,10 +3,12 @@ import Cookies from 'universal-cookie';
 import getUserByToken from '../Lib/getUserByToken';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import moment from "moment";
 
 const Home = () => {
     const [userInfo, setUserInfo] = useState(null);
-    const [firstRender, setFirstRender] = useState(true)
+    const [firstRender, setFirstRender] = useState(true);
+    const [questions, setQuestions] = useState(null);
 
     useEffect(() => {
         const token = new Cookies().get('token');
@@ -18,7 +20,7 @@ const Home = () => {
 
     useEffect(() =>{
         axios.get(`${process.env.REACT_APP_SERVER_URL}/questions/get/all`)
-        .then(res => console.log(res.data))
+        .then(res => setQuestions(res.data))
     })
 
     useEffect(() => console.log(userInfo), [userInfo])
@@ -34,6 +36,16 @@ const Home = () => {
             </div>
             :<div>
                 <h1 className="index-title">Top Questions <Link className="btn ask-question-btn" to = "/create">Ask question</Link></h1>
+                {questions?.map(question => {
+                    return(
+                        <div key = {question._id} className="box theme-reverse">
+                            <Link to = {`/question/${question._id}`}>
+                                <h3>{question.title}</h3>
+                                <p className="color-adjust">Asked {moment(question?.createdAt).fromNow()} by {question?.asker?.name}</p>
+                            </Link>
+                        </div>
+                    )
+                })}
             </div>}
         </div>
     )

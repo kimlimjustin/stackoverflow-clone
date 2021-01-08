@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import ReactMarkdown from 'react-markdown';
+import moment from "moment";
 
 const Question = (params) => {
     const [question, setQuestion] = useState(null);
@@ -10,13 +11,17 @@ const Question = (params) => {
         .then(res => {
             if(res.data) setQuestion(res.data)
         })
+        .catch(() => window.location = "/")
     }, [params.match.params.questionId])
 
     return(
         <div className="container">
             <h1 className="question-title">{question?.title}</h1>
+            <p>Asked {moment(question?.createdAt).fromNow()}</p>
             <hr />
-            <ReactMarkdown>{question?.body}</ReactMarkdown>
+            <blockquote className="question-body">
+                <ReactMarkdown>{question?.body}</ReactMarkdown>
+            </blockquote>
         </div>
     )
 }
